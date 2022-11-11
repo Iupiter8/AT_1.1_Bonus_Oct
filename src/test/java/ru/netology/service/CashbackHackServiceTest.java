@@ -8,59 +8,58 @@ import ru.neyology.service.CashbackHackService;
 
 public class CashbackHackServiceTest {
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void remain() {
 
         int amount = 900;
         int expected = 100;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.testng.Assert.assertEquals (actual, expected);
+        org.junit.Assert.assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void remainOver() {
 
         int amount = 1555;
         int expected = 445;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.testng.Assert.assertEquals (actual, expected);
+        org.junit.Assert.assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void remainUnderOnOne() {
 
         int amount = 999;
         int expected = 1;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.testng.Assert.assertEquals (actual, expected);
+        org.junit.Assert.assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void remainOverOnOne() {
 
         int amount = 1001;
         int expected = 999;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.testng.Assert.assertEquals (actual, expected);
+        org.junit.Assert.assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void remainEqual() {
 
         int amount = 1000;
         int expected = 0;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.testng.Assert.assertEquals (actual, expected);
+        org.junit.Assert.assertEquals(expected, actual);
 
     }
-
 }
