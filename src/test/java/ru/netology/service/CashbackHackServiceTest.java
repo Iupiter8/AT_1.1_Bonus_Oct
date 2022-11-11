@@ -1,10 +1,9 @@
 package ru.netology.service;
 
-//import org.junit.jupiter.api.Test;
-
-//import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.Test;
 import ru.neyology.service.CashbackHackService;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CashbackHackServiceTest {
 
@@ -15,7 +14,7 @@ public class CashbackHackServiceTest {
         int expected = 100;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.Assert.assertEquals (expected, actual);
 
     }
 
@@ -26,7 +25,7 @@ public class CashbackHackServiceTest {
         int expected = 445;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.Assert.assertEquals (expected, actual);
 
     }
 
@@ -37,7 +36,7 @@ public class CashbackHackServiceTest {
         int expected = 1;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.Assert.assertEquals (expected, actual);
 
     }
 
@@ -48,7 +47,7 @@ public class CashbackHackServiceTest {
         int expected = 999;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.Assert.assertEquals (expected, actual);
 
     }
 
@@ -59,7 +58,64 @@ public class CashbackHackServiceTest {
         int expected = 0;
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(amount);
-        org.junit.Assert.assertEquals(expected, actual);
+        org.junit.Assert.assertEquals (expected, actual);
 
     }
+
+    @Test
+    public void remainJ5() {
+
+        int amount = 900;
+        int expected = 100;
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(amount);
+        assertEquals (expected, actual);
+
+    }
+
+    @Test
+    public void remainOverJ5() {
+
+        int amount = 1555;
+        int expected = 445;
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(amount);
+        assertEquals (expected, actual);
+
+    }
+
+    @Test
+    public void remainUnderOnOneJ5() {
+
+        int amount = 999;
+        int expected = 1;
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(amount);
+        assertEquals (expected, actual);
+
+    }
+
+    @Test
+    public void remainOverOnOneJ5() {
+
+        int amount = 1001;
+        int expected = 999;
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(amount);
+        assertEquals (expected, actual);
+
+    }
+
+    @Test
+    public void remainEqualJ5() {
+
+        int amount = 1000;
+        int expected = 0;
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(amount);
+        assertEquals (expected, actual);
+
+    }
+
+
 }
